@@ -1,0 +1,35 @@
+<section class="master-form">
+    <div class="signin-container">
+
+        <div id="container" class="container">
+            <div class="form-container sign-in-container">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{form.media}}
+                    <h2>{{form_title}}</h2>
+                    
+
+                    <div class="container">
+                        {{registration_form|crispy}}
+                        <div class="button-container">
+                            <button type="submit">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+
+        </div>
+
+        <footer>
+            <p>
+                African <i class="fa fa-heart"></i>
+                <a target="_blank" href="https://florin-pop.com">Design</a>
+                Matters
+                <a target="_blank" href="{% url 'home:index' %}">Home</a>.
+            </p>
+        </footer>
+    </div>
+
+</section>

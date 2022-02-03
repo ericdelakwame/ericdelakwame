@@ -1,0 +1,37 @@
+{% extends 'home/header.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+{% block title %}
+Complete Profile
+    
+{% endblock title %}
+    
+
+
+
+{% block content %}
+<section id="new-profile">
+    <div id="content">
+        <div class="form-container">
+            <div class="container" >
+                <form action="" method="POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <div class="container" style="padding-top: 30px;">
+                        {{form|crispy}}
+                    </div>
+                    
+                    <button type="submit" class="btn btn-black">
+                        Send
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</section>
+    
+{% endblock content %}
+    

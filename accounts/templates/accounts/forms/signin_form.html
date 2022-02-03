@@ -1,0 +1,64 @@
+{% extends 'home/header.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block title %}
+Register
+{% endblock title %}
+
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'home/fa/css/fontawesome-all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'accounts/css/form.css' %}">
+</head>
+
+<section class="master">
+    <div class="signin">
+
+        <div id="container1" class="container">
+            <div class="form-container sign-in-container">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    
+                   
+                        <div class="headline" style="margin-bottom: 10px;">
+                            <h1 style="font-size: 20px; text-align: left;">
+                                Welcome Back
+                            </h1>
+                            <h2 style="text-align: left; padding-top: 30px; padding-bottom: 20px;">Sign In With</h2>
+                            <div class="social-container">
+                                
+                                <a href="{% url 'social:begin' 'facebook' %}" class="social"><i class="fab fa-facebook-f"></i></a>
+                                <a href="{% url 'social:begin' 'google-oauth2' %}" class="social"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="{% url 'social:begin' 'twitter' %}"><i class="fab fa-twitter"></i></a>
+                            
+                            </div>
+                        </div>
+                            
+                       
+                        
+        
+                    <div class="container1">
+                         <h2>Or</h2> 
+                        {{form|crispy}}
+
+                    <button class="btn btn-black" type="submit">Sign In</button>
+                     
+                    </div>
+
+                </form>
+                <h1 style="font-size: 20px;">
+                    Forgot Your Password?
+                </h1>
+                <h4><a class="btn btn-black" href="{% url 'accounts:password_reset' %}">Reset Password</a></h4>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'home/header.html' %}
+{% load static %}
+
+
+
+{% block title %}
+    Update Your Details
+{% endblock title %}
+    
+
+
+{% block content %}
+
+<div id="content">
+    <div class="container headline" data-aos="fade-in" data-aos-duration="1000">
+        <h1 class="center">Update Your ADM Account</h1>
+    </div>
+
+    <div class="container">
+        {% include 'accounts/forms/base_form.html' %}
+    </div>
+    
+</div>
+    
+{% endblock content %}
+    
